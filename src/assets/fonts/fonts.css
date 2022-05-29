@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'Adolphus Serif';
+  src: url('AdolphusSerif.woff2') format('woff2'), url('AdolphusSerif.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sporting Grotesque';
+  src: url('SportingGrotesque-Normal.woff2') format('woff2'), url('SportingGrotesque-Normal.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sporting Grotesque';
+  src: url('SportingGrotesque-Gras.woff2') format('woff2'), url('SportingGrotesque-Gras.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
