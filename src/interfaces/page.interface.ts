@@ -1,4 +1,4 @@
-export interface IPage {
+export interface PageDto {
   alias: string;
   article: string;
   background_image: string;
@@ -14,4 +14,18 @@ export interface IPage {
   video_backward: string;
   video_forward: string;
   white_text: string;
+}
+
+export interface IPage {
+  article: string;
+  background_image: string;
+  background_image_cover: string;
+  credits: string;
+  fold: boolean;
+  id: number;
+  ordering: number;
+  title: string;
+  video_backward: string;
+  video_forward: string;
+  white_text: boolean;
 }
