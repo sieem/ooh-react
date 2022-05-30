@@ -1,9 +1,7 @@
-import { useParams } from 'react-router-dom';
+import { IPage } from '../interfaces/page.interface';
 
-export function Page() {
-  const { pageIdEven, pageIdOdd } = useParams();
-
+export function Page({ pageData }: { pageData: IPage }) {
   return <main className="p-2">
-    <h2>{pageIdEven}-{pageIdOdd}</h2>
+    <p>{pageData.alias}</p>
   </main>;
 }
