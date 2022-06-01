@@ -15,14 +15,14 @@ export function Pages() {
   }, []);
 
   return (
-    <main className='h-screen w-screen overflow-hidden'>
-      <div className='left forward  h-full'>
+    <main className='h-screen w-screen overflow-hidden flex'>
+      <div className='left forward  h-full w-1/2'>
         {leftPages.map(leftPage => (
           <Page pageData={leftPage} key={leftPage.id} />
         ))}
       </div>
 
-      <div className='right backwards  h-full'>
+      <div className='right backwards  h-full w-1/2'>
         {rightPages.map(rightPage => (
           <Page pageData={rightPage} key={rightPage.id} />
         ))}
