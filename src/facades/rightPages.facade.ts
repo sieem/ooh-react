@@ -1,4 +1,4 @@
-import { switchMap, BehaviorSubject, Observable, map } from 'rxjs';
+import { switchMap, BehaviorSubject, Observable, map, shareReplay } from 'rxjs';
 import { IPage } from '../interfaces/page.interface';
 import { mapPageDtoToIPage } from './mapPages.utils';
 
@@ -9,4 +9,5 @@ export const rightPages$: Observable<IPage[]> = rightPagesSubject$.pipe(
   switchMap((res) => res.json()),
   map((pages) => pages.map(mapPageDtoToIPage)),
   map((pages) => pages.reverse()),
+  shareReplay({ refCount: false, bufferSize: 1 }),
 );

@@ -11,5 +11,5 @@ export function Fold() {
     opacity: fold ? 1 : 0,
   };
 
-  return <div style={style} className='fold  fixed top-0 left-1/2 -translate-x-1/2 w-[80px] h-full z-50 bg-repeat-y bg-center transition-opacity duration-500'></div>
+  return <div style={style} className='fixed top-0 left-1/2 -translate-x-1/2 w-[80px] h-full z-40 bg-repeat-y bg-center transition-opacity duration-500'></div>
 }
