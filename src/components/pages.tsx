@@ -29,6 +29,7 @@ export function Pages() {
   }
 
   const handlers = useSwipeable({
+    trackMouse: true,
     onSwiped: ({ dir }) => changePage(dir === 'Up'),
   });
 
@@ -49,13 +50,13 @@ export function Pages() {
     <main className='h-screen w-screen overflow-hidden flex' {...handlers}>
       <div style={leftStyle} className='left forward  h-full w-1/2 transition-transform duration-700'>
         {leftPages.map(leftPage => (
-          <Page pageData={leftPage} key={leftPage.id} />
+          <Page pageData={leftPage} side="left" key={leftPage.id} />
         ))}
       </div>
 
       <div style={rightStyle} className='right backwards  h-full w-1/2 transition-transform duration-700'>
         {rightPages.map(rightPage => (
-          <Page pageData={rightPage} key={rightPage.id} />
+          <Page pageData={rightPage} side="right" key={rightPage.id} />
         ))}
       </div>
     </main>
