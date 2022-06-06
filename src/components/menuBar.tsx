@@ -1,12 +1,18 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { firstValueFrom } from 'rxjs';
+import { currentPageId$ } from '../store/currentPage.store';
+import { totalPages$ } from '../store/totalPages.store';
+import { useObservable } from '../hooks/useObservable.hook';
 
 export function MenuBar() {
-  const { pageIdEven, pageIdOdd } = useParams();
+  const currentPageId = useObservable(currentPageId$) ?? 0;
+  const totalPages = useObservable(totalPages$) ?? 0;
 
   return <nav className='fixed w-full flex uppercase justify-around p-4'>
     <Link to={'/page/0-1'}>ooh</Link>
     <Link to={'/page/16-17'}>about</Link>
     <Link to={'/page/32-33'}>all looks</Link>
-    <div className='whitespace-nowrap'>[{pageIdEven}-{pageIdOdd}] | <Link to={'/page/34-35'}>35</Link></div>
+    <div className='whitespace-nowrap'>[{currentPageId}-{currentPageId + 1}] | <Link to={`/page/${totalPages}-${totalPages + 1}`}>{totalPages}</Link></div>
   </nav>;
 }
