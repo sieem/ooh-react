@@ -1,6 +1,4 @@
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import { firstValueFrom } from 'rxjs';
 import { currentPageId$ } from '../store/currentPage.store';
 import { totalPages$ } from '../store/totalPages.store';
 import { useObservable } from '../hooks/useObservable.hook';

@@ -1,9 +1,11 @@
+import { baseUrl } from '../constants/baseUrl';
 import { IPage } from '../interfaces/page.interface';
+import { Video } from './video';
 
 export function Page({ pageData, side }: { pageData: IPage, side: 'left' | 'right' }) {
   const style = {
-    ...(pageData.background_image ? { backgroundImage: `url(https://api.o-o-h.be/uploads/${pageData.background_image})` } : {}),
-    ...(pageData.background_image_cover ? { backgroundSize: 'cover' } : {}),
+    ...(pageData.backgroundImage ? { backgroundImage: `url(${baseUrl}/${pageData.backgroundImage})` } : {}),
+    ...(pageData.backgroundImageCover ? { backgroundSize: 'cover' } : {}),
     
     // exceptions for the first page with the OOH logo
     ...(pageData.ordering === 0 ? { backgroundSize: '94px' } : {}),
@@ -12,12 +14,13 @@ export function Page({ pageData, side }: { pageData: IPage, side: 'left' | 'righ
   };
 
   const creditsStyle = {
-    ...(pageData.white_text ? { color: 'white' } : {}),
-    ...(pageData.white_text ? { textShadow: '0 0 5px black' } : {}),
+    ...(pageData.whiteText ? { color: 'white' } : {}),
+    ...(pageData.whiteText ? { textShadow: '0 0 5px black' } : {}),
   };
 
   return <main className='h-full bg-contain bg-no-repeat bg-center flex flex-col' style={style}>
-    <div className='w-2/3 pt-24 mx-auto flex-grow' dangerouslySetInnerHTML={{ __html: pageData.article }}></div>
-    <div className='text-xs ml-8 mr-4 mb-4' style={creditsStyle} dangerouslySetInnerHTML={{ __html: pageData.credits}}></div>
+    {pageData.videoForward && pageData.videoBackward && <Video pageId={pageData.id} videoForward={pageData.videoForward} videoBackward={pageData.videoBackward} />}
+    {pageData.article && <div className='w-2/3 pt-24 mx-auto flex-grow' dangerouslySetInnerHTML={{ __html: pageData.article }} />}
+    {pageData.credits && <div className='text-xs ml-8 mr-4 mb-4 mt-auto justify-self-end' style={creditsStyle} dangerouslySetInnerHTML={{ __html: pageData.credits }} />}
   </main>;
 }

@@ -15,7 +15,7 @@ export function PagesRoute() {
     }
 
     setCurrentPageId(pageIdEven);
-  }, []);
+  }, [pageIdEven]);
 
 
   return <main>
