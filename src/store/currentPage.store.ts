@@ -15,5 +15,5 @@ export const currentLeftPage$ = combineLatest([leftPages$, currentPageId$]).pipe
 );
 
 export const currentRightPage$ = combineLatest([rightPages$, currentPageId$]).pipe(
-  map(([rightPages, currentPageId]) => rightPages[currentPageId + 1])
+  map(([rightPages, currentPageId]) => rightPages[rightPages.length - currentPageId -1])
 );
