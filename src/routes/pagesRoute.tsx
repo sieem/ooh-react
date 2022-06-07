@@ -11,10 +11,10 @@ export function PagesRoute() {
 
   useEffect(() => {
     if (!pageIdEven || !pageIdOdd) {
-      navigate('/page/0-1', { replace: true });
+      return navigate('/page/0-1', { replace: true });
     }
 
-    setCurrentPageId(pageIdEven);
+    setCurrentPageId(+pageIdEven / 2);
   }, [pageIdEven]);
 
 

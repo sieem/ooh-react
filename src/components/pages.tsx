@@ -23,8 +23,7 @@ export function Pages() {
     const newPageId = pageLimiter(goUp, _currentPageId, _totalPages);
 
     if (newPageId !== _currentPageId) {
-      navigate(`/page/${newPageId}-${newPageId + 1}`, { replace: true });
-      setCurrentPageId(newPageId);
+      navigate(`/page/${newPageId * 2}-${(newPageId * 2) + 1}`, { replace: true });
     }
   }
 

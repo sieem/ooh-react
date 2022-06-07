@@ -11,6 +11,6 @@ export function MenuBar() {
     <Link to={'/page/0-1'}>ooh</Link>
     <Link to={'/page/16-17'}>about</Link>
     <Link to={'/page/32-33'}>all looks</Link>
-    <div className='whitespace-nowrap w-[120px] text-right'>[{currentPageId}-{currentPageId + 1}] | <Link to={`/page/${totalPages}-${totalPages + 1}`}>{totalPages}</Link></div>
+    <div className='whitespace-nowrap w-[120px] text-right'>[{currentPageId * 2}-{currentPageId * 2 + 1}] | <Link to={`/page/${totalPages}-${totalPages + 1}`}>{totalPages}</Link></div>
   </nav>;
 }
