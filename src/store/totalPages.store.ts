@@ -1,7 +1,6 @@
-import { combineLatest, map } from 'rxjs';
-import { leftPages$ } from '../facades/leftPages.facade';
-import { rightPages$ } from '../facades/rightPages.facade';
+import { map } from 'rxjs';
+import { leftPages$ } from '../facades/pages.facade';
 
-export const totalPages$ = combineLatest([leftPages$, rightPages$]).pipe(
-  map(([leftPages, rightPages]) => leftPages.length > rightPages.length ? leftPages.length : rightPages.length )
-)
+export const totalPages$ = leftPages$.pipe(
+  map((leftPages) => leftPages.length + 1) // to account for the overview page
+);

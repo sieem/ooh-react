@@ -1,6 +1,5 @@
 import { BehaviorSubject, map, combineLatest } from 'rxjs';
-import { leftPages$ } from '../facades/leftPages.facade';
-import { rightPages$ } from '../facades/rightPages.facade';
+import { leftPages$, rightPages$ } from '../facades/pages.facade';
 
 const currentPageSubjectId = new BehaviorSubject<number>(0);
 

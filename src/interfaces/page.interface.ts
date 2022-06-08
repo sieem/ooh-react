@@ -24,6 +24,9 @@ export interface IPage {
   fold: boolean;
   id: number;
   ordering: number;
+  showInOverview: boolean;
+  overviewOrdering: number;
+  side: 'left' | 'right';
   title: string;
   videoBackward: string;
   videoForward: string;
