@@ -8,8 +8,8 @@ export function Video({ videoForward, videoBackward, pageId }: { videoForward: s
   const [videoPosition, setVideoPosition] = useState<'forward' | 'backward'>('backward');
   const videoForwardRef = useRef<HTMLVideoElement>(null);
   const videoBackwardsRef = useRef<HTMLVideoElement>(null);
-  const currentLeftPage = useObservable(currentLeftPage$);
-  const currentRightPage = useObservable(currentRightPage$);
+  const currentLeftPage = useObservable(currentLeftPage$, undefined);
+  const currentRightPage = useObservable(currentRightPage$, undefined);
 
   useEffect(() => {
     if (!videoForwardRef.current || !videoBackwardsRef.current) {

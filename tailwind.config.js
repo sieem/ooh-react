@@ -17,6 +17,10 @@ module.exports = {
       width: {
         landscape: '100vh',
         'landscape-chrome': 'calc(100vh - 56px)',
+      },
+      transitionDuration: {
+        '750': '750ms',
+        '3000': '3000ms',
       }
     }
   },

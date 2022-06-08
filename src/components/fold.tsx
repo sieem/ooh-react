@@ -4,7 +4,7 @@ import { fold$ } from '../store/fold.store';
 import foldUrl from '../assets/images/fold.png'
 
 export function Fold() {
-  const fold = useObservable(fold$) ?? false;
+  const fold = useObservable(fold$, false);
 
   const style = {
     backgroundImage: `url(${foldUrl})`,

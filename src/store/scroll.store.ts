@@ -1,6 +1,6 @@
 import { fromEvent, map, filter, Observable, throttleTime } from 'rxjs';
 
-const scrollAnimationTimeout = 700;
+const scrollAnimationTimeout = 750;
 let lastTimeStamp = 0;
 
 export const scrollEvent$: Observable<boolean> = fromEvent(window, 'wheel').pipe(

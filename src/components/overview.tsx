@@ -10,7 +10,7 @@ export function OverviewPage({ overviewData }: { overviewData: IOverviewPage[] }
       const pageLink = `${page * 2}-${(page * 2) + 1}`;
 
       return <Link className='group flex bg-contain bg-no-repeat bg-center hover:no-underline' to={`/page/${pageLink}`} style={style} key={id}>
-        <div className='flex-grow flex items-center justify-center opacity-0 transition-all duration-700 group-hover:opacity-100 group-hover:bg-white/[.8]'>{pageLink}</div>
+        <div className='flex-grow flex items-center justify-center opacity-0 transition duration-750 group-hover:opacity-100 group-hover:bg-white/[.8]'>{pageLink}</div>
       </Link>
     })}
   </div>;

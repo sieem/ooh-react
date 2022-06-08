@@ -3,7 +3,7 @@ import { useSwipeable } from 'react-swipeable';
 import { useEffect } from 'react';
 import { MenuBar } from '../components/menuBar';
 import { Pages } from '../components/pages';
-import { currentPageId$, setCurrentPageId } from '../store/currentPage.store';
+import { currentPageId$ } from '../store/currentPage.store';
 import { Fold } from '../components/fold';
 import { isChrome, isMobile } from 'react-device-detect';
 import { useScreenOrientation } from '../hooks/screenOrientation.hook';
@@ -11,11 +11,13 @@ import { scrollEvent$ } from '../store/scroll.store';
 import { combineLatest, firstValueFrom } from 'rxjs';
 import { pageLimiter } from '../utils/pageLimiter.util';
 import { totalPages$ } from '../store/totalPages.store';
+import { useBehaviorSubject } from '../hooks/useBehaviorSubject.hook';
 
 export function PagesRoute() {
   const { pageIdEven, pageIdOdd } = useParams();
   const navigate = useNavigate();
   const screenOrientation = useScreenOrientation();
+  const [_, setCurrentPageId] = useBehaviorSubject(currentPageId$);
 
   const changePage = async (goUp: boolean) => {
     const [_totalPages, _currentPageId] = await firstValueFrom(combineLatest([totalPages$, currentPageId$]));
