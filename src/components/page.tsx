@@ -21,6 +21,6 @@ export function Page({ pageData, side }: { pageData: IPage, side: 'left' | 'righ
   return <main className='h-full bg-contain bg-no-repeat bg-center flex flex-col' style={style}>
     {pageData.videoForward && pageData.videoBackward && <Video pageId={pageData.id} videoForward={pageData.videoForward} videoBackward={pageData.videoBackward} />}
     {pageData.article && <div className='w-2/3 pt-24 mx-auto flex-grow' dangerouslySetInnerHTML={{ __html: pageData.article }} />}
-    {pageData.credits && <div className='text-xs ml-8 mr-4 mb-4 mt-auto justify-self-end' style={creditsStyle} dangerouslySetInnerHTML={{ __html: pageData.credits }} />}
+    {pageData.credits && <div className='text-sm ml-8 mr-4 mb-4 mt-auto justify-self-end md:text-xs' style={creditsStyle} dangerouslySetInnerHTML={{ __html: pageData.credits }} />}
   </main>;
 }

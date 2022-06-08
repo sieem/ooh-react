@@ -6,7 +6,18 @@ module.exports = {
   theme: {
     fontSize: {
       'xs': '.8vw',
+      'sm': '1.4vw',
       '4xl': '2.25rem',
+    },
+    extend: {
+      height: {
+        landscape: '100vw',
+        chrome: 'calc(100vh - 56px)',
+      },
+      width: {
+        landscape: '100vh',
+        'landscape-chrome': 'calc(100vh - 56px)',
+      }
     }
   },
   plugins: [],
