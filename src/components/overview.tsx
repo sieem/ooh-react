@@ -9,7 +9,7 @@ export function OverviewPage({ overviewData }: { overviewData: IOverviewPage[] }
       const style = { backgroundImage: `url(${baseUrl}/${backgroundImage})` };
       const pageLink = `${page * 2}-${(page * 2) + 1}`;
 
-      return <Link className='group flex bg-contain bg-no-repeat bg-center' to={`/page/${pageLink}`} style={style}>
+      return <Link className='group flex bg-contain bg-no-repeat bg-center hover:no-underline' to={`/page/${pageLink}`} style={style}>
         <div className='flex-grow flex items-center justify-center opacity-0 transition-all duration-700 group-hover:opacity-100 group-hover:bg-white/[.8]'>{pageLink}</div>
       </Link>
     })}

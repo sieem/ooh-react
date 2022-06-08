@@ -21,3 +21,7 @@ h1 {
   @apply font-normal;
   font-size: 3.65vw;
 }
+
+a:hover{
+  @apply underline;
+}
