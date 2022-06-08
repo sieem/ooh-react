@@ -54,7 +54,7 @@ export function Pages() {
   const lastRightPage = rightPages.slice().reverse()[0] ?? {};
 
   return (
-    <main className='h-screen w-screen overflow-hidden flex' {...handlers}>
+    <main className='h-full w-full overflow-hidden flex' {...handlers}>
       <div style={leftStyle} className='left forward  h-full w-1/2 transition-transform duration-700'>
         {leftPagesWithOutLast.map(leftPage => (
           <Page pageData={leftPage} side="left" key={leftPage.id} />
