@@ -27,6 +27,7 @@ export const overviewPage$: Observable<IOverviewPage[][]> = fromFetch('https://a
     const [leftPages, rightPages] = await firstValueFrom(combineLatest([leftPages$, rightPages$]));
     return pages.map((page) => ({
       backgroundImage: page.backgroundImage,
+      id: page.id,
       page: determinePage(page, leftPages, rightPages),
     }));
   }),
