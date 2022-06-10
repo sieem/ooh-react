@@ -10,9 +10,7 @@ export function MenuBar() {
 
   const [opacity, setOpacity] = useState('opacity-0');
 
-  useEffect(() => {
-    setTimeout(() => setOpacity('opacity-100'), 3300);
-  }, []);
+  useEffect(() => void setTimeout(() => setOpacity('opacity-100'), 3300), []);
 
   return <nav className={'fixed w-full flex uppercase justify-around p-4 z-50 transition-opacity duration-3000 ' + opacity}>
     <Link to={'/page/0-1'}>ooh</Link>

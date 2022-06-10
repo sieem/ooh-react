@@ -7,9 +7,9 @@ export const useScreenOrientation = (): OrientationType => {
     const handleChange = () => {
       setState(window.screen.orientation.type);
     };
+
     window.screen.orientation.addEventListener('change', handleChange);
     return () => window.screen.orientation.removeEventListener('change', handleChange);
-    
   }, []);
 
   return state;

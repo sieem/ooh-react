@@ -16,13 +16,8 @@ export function Pages() {
   const [leftStyle, setLeftStyle] = useState({ transform: `translateY(-${100 * randomFirstPage()}%)` });
   const [duration, setDuration] = useState('duration-3000');
 
-  useEffect(() => {
-    setLeftStyle({ transform: `translateY(-${100 * currentPageId}%)` });
-  }, [currentPageId]);
-
-  useEffect(() => {
-    setTimeout(() => setDuration('duration-750'), 500);
-  }, []);
+  useEffect(() => void setLeftStyle({ transform: `translateY(-${100 * currentPageId}%)` }), [currentPageId]);
+  useEffect(() => void setTimeout(() => setDuration('duration-750'), 500), []);
 
   const rightStyle = { transform: `translateY(-${100 * (totalPages - currentPageId - 1)}%)` };
 
